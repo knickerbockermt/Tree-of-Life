@@ -1,12 +1,7 @@
 import sys
 from PyQt6 import QtWidgets, uic
 
-# class Donors():
-#     def __init__(self):
-#         self.donors = []
 
-class Invalid(Exception):
-    pass
 class Main(QtWidgets.QMainWindow):
 
     def __init__(self):
@@ -15,6 +10,11 @@ class Main(QtWidgets.QMainWindow):
             "Bellevue": {},
             "Seattle": {},
             "Portland": {}
+        }
+        self._num_branches = {
+            "Bellevue": 10,
+            "Seattle": 10,
+            "Portland": 10
         }
 
         uic.loadUi("mainwindow.ui", self)
@@ -25,41 +25,69 @@ class Main(QtWidgets.QMainWindow):
         return self._donors
 
     def find_branch(self):
-        #will be microservice
+        # will be microservice
         open_branch = "2"
         self.branch.setText(open_branch)
 
-    def create_donor(self):
+    def create_donor(self, last, first, dob, num, donations, center, branch):
         """creates donor from user input and adds to donors"""
 
-        last = self.last.text()
-        first = self.first.text()
-        dob = self.dob.text()
-        num = self.num.text()
-        donations = self.donations.currentText()
-        center=  self.center.currentText()
-        branch =  self.branch.text()
-
-        donor = Donor(last,first,dob,num,donations,center,branch)
+        donor = Donor(last, first, dob, num, donations, center, branch)
 
         for i in self._donors:
             if i == center:
                 self._donors[i][num] = donor
         print(self._donors)
 
+    def val(self, last, first, dob, num, donations, center, branch):
+        if self.validate_full(last, first, dob, num, donations, center, branch) is False:
+            self.validate.setText("Please fill out all fields.")
+            return False
+        if self.validate_donor(num) is False:
+            self.validate.setText("Donor already in system.")
+            return False
+        if self.validate_branch(branch, center) is False:
+            self.validate.setText("Invalid branch. Please enter another or click 'Find Branch' "
+                                  "to find an open spot.")
+            return False
+        if self.validate_dob(dob) is False:
+            self.validate.setText("Please enter DOB in MM-DD-YYYY format.")
+            return False
+        if self.validate_num(num) is False:
+            self.validate.setText("Donor number may only contain digits 0-9.")
+            return False
 
-    def validate_new(self):
-        last = self.last.text()
-        first = self.first.text()
-        dob = self.dob.text()
-        num = self.num.text()
-        donations = self.donations.currentText()
-        center = self.center.currentText()
-        branch = self.branch.text()
+    def validate_full(self, last, first, dob, num, donations, center, branch):
 
         if last == "" or first == "" or dob == "" or num == "" or branch == "" \
-            or center =="Choose Location" or donations == "Choose Number":
+                or center == "Choose Location" or donations == "Choose Number":
             return False
+
+    def validate_donor(self,num):
+        for i in self._donors:
+            for j in self._donors[i]:
+                if num == j:
+                    return False
+
+    def validate_branch(self, branch, center):
+        for i in self._num_branches:
+            if i == center and int(branch) > self._num_branches[i]:
+                return False
+
+    def validate_dob(self, dob):
+        if len(dob) != 10:
+            return False
+        for i in range(len(dob)):
+            if i == 2 or i == 5:
+                if dob[i] != "-":
+                    return False
+            elif not dob[i].isdigit():
+                return False
+
+    def validate_num(self,num):
+        if not num.isdigit():
+            return False
+
 
     def display_new_donor(self):
         """modifies labels to display donor information when add donor is clicked"""
@@ -97,14 +125,22 @@ class Main(QtWidgets.QMainWindow):
 
     def open_donorinfo(self):
         """Opens window with donor information added"""
-        if self.validate_new() is False:
-            self.validate.setText("Please fill out all fields.")
+        last = self.last.text()
+        first = self.first.text()
+        dob = self.dob.text()
+        num = self.num.text()
+        donations = self.donations.currentText()
+        center = self.center.currentText()
+        branch = self.branch.text()
+
+        if self.val(last, first, dob, num, donations, center, branch) is False:
             return
-        self.create_donor()
+        self.create_donor(last, first, dob, num, donations, center, branch)
         self.window = DonorInfo()
         self.window.show()
         self.display_new_donor()
         self.clear_info()
+
 
 class DonorInfo(QtWidgets.QMainWindow):
     def __init__(self):
@@ -122,11 +158,11 @@ class DonorInfo(QtWidgets.QMainWindow):
         center = self.center.currentText()
         branch = self.branch.text()
 
-        donor =Donor(last,first,dob,num,donations,center,branch)
+        donor = Donor(last, first, dob, num, donations, center, branch)
         donors = window.get_donors()
         for i in donors:
             if i == center:
-                dict= donors[i]
+                dict = donors[i]
                 for i in dict:
                     if i == num:
                         dict[i] = donor
@@ -134,6 +170,7 @@ class DonorInfo(QtWidgets.QMainWindow):
 
     def hide_wind(self):
         self.hide()
+
 
 class Donor:
     def __init__(self, last, first, dob, num, donations, center, branch):
