@@ -6,9 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>771</width>
-    <height>606</height>
+    <width>770</width>
+    <height>683</height>
    </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -21,9 +24,9 @@
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>50</y>
+      <y>70</y>
       <width>611</width>
-      <height>221</height>
+      <height>231</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -44,7 +47,7 @@ color:rgb(75, 75, 75)</string>
        <x>10</x>
        <y>10</y>
        <width>591</width>
-       <height>201</height>
+       <height>211</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_16">
@@ -101,7 +104,7 @@ border-radius: 0%</string>
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QLineEdit" name="lineEdit_14">
+             <widget class="QLineEdit" name="search_last">
               <property name="styleSheet">
                <string notr="true">background: white;
 border-radius: 0%;</string>
@@ -119,7 +122,7 @@ border-radius: 0%;</string>
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="lineEdit_15">
+             <widget class="QLineEdit" name="search_first">
               <property name="styleSheet">
                <string notr="true">background: white;
 border-radius: 0%;</string>
@@ -128,106 +131,6 @@ border-radius: 0%;</string>
                <bool>false</bool>
               </property>
              </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QLabel" name="centerLocationLabel_8">
-              <property name="text">
-               <string>Center Location:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QComboBox" name="centerLocationComboBox_8">
-              <property name="styleSheet">
-               <string notr="true">background: white;
-border-radius: 0%;</string>
-              </property>
-              <item>
-               <property name="text">
-                <string>Choose Location</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Bellevue</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Seattle</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Portland</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_17">
-            <item>
-             <spacer name="horizontalSpacer_15">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_13">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">border: none;
-background: rgb(85, 198, 229);
-border-radius: 5%;
-font: 700 10pt &quot;Trebuchet MS&quot;;
-padding-top: 5;
-padding-bottom: 5;
-padding-left: 12;
-padding-right: 12;
-color: white;
-letter-spacing: .2rem
-</string>
-              </property>
-              <property name="text">
-               <string>Search</string>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>12</width>
-                <height>16</height>
-               </size>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_16">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
             </item>
            </layout>
           </item>
@@ -292,48 +195,6 @@ padding-top: 5</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="0">
-             <widget class="QLabel" name="centerLocationLabel_9">
-              <property name="text">
-               <string>Center Location:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QComboBox" name="centerLocationComboBox_9">
-              <property name="styleSheet">
-               <string notr="true">background: white;
-border-radius: 0%;</string>
-              </property>
-              <item>
-               <property name="text">
-                <string>Choose Location</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Bellevue</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Seattle</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Portland</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-            <item row="3" column="0">
-             <widget class="QLabel" name="enterManuallyLabel_6">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
             <item row="1" column="0">
              <widget class="QLabel" name="donorNumberLabel_6">
               <property name="text">
@@ -342,7 +203,7 @@ border-radius: 0%;</string>
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="donorNumberLineEdit_6">
+             <widget class="QLineEdit" name="search_num">
               <property name="styleSheet">
                <string notr="true">background: white;
 border-radius: 0%;</string>
@@ -352,36 +213,66 @@ border-radius: 0%;</string>
               </property>
              </widget>
             </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="enterManuallyLabel_6">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_18">
-            <item>
-             <spacer name="horizontalSpacer_17">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_14">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">border: none;
+           <layout class="QHBoxLayout" name="horizontalLayout_18"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="search_validate">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(249, 66, 58);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="search">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: none;
 background: rgb(85, 198, 229);
 border-radius: 5%;
 font: 700 10pt &quot;Trebuchet MS&quot;;
@@ -392,88 +283,43 @@ padding-right: 12;
 color: white;
 letter-spacing: .2rem
 </string>
-              </property>
-              <property name="text">
-               <string>Search</string>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>12</width>
-                <height>16</height>
-               </size>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_18">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </item>
-         </layout>
+          </property>
+          <property name="text">
+           <string>Search</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>12</width>
+            <height>16</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </item>
      </layout>
     </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton_12">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>660</x>
-      <y>10</y>
-      <width>81</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: none;
-background:rgb(103, 108, 116);
-border-radius: 5%;
-font: 700 10pt &quot;Trebuchet MS&quot;;
-padding-top: 5;
-padding-bottom: 5;
-padding-left: 15;
-padding-right: 15;
-color: white;
-letter-spacing: .2rem
-</string>
-    </property>
-    <property name="text">
-     <string>Logout</string>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>12</width>
-      <height>16</height>
-     </size>
-    </property>
-   </widget>
    <widget class="QFrame" name="frame_4">
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>300</y>
+      <y>340</y>
       <width>611</width>
-      <height>251</height>
+      <height>271</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -500,7 +346,7 @@ border: solid black;</string>
        <x>10</x>
        <y>10</y>
        <width>591</width>
-       <height>229</height>
+       <height>251</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -514,7 +360,7 @@ padding: 5;
 border-radius: 0%</string>
         </property>
         <property name="text">
-         <string>Add Donor:</string>
+         <string>Add Donor: </string>
         </property>
        </widget>
       </item>
@@ -747,6 +593,13 @@ border-radius: 0%;</string>
             </item>
            </widget>
           </item>
+          <item row="5" column="1">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>(all fields required)</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
         <item>
@@ -791,12 +644,7 @@ border-radius: 0%;</string>
               </item>
               <item>
                <property name="text">
-                <string>Bellevue</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Seattle</string>
+                <string>Burns</string>
                </property>
               </item>
               <item>
@@ -804,14 +652,28 @@ border-radius: 0%;</string>
                 <string>Portland</string>
                </property>
               </item>
+              <item>
+               <property name="text">
+                <string>Reno</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Seattle</string>
+               </property>
+              </item>
              </widget>
             </item>
             <item row="1" column="0">
-             <widget class="QLabel" name="branchNumberLabel_3">
-              <property name="text">
-               <string>Branch Number:</string>
-              </property>
-             </widget>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QLabel" name="branchNumberLabel_3">
+                <property name="text">
+                 <string>Branch Number:</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
             <item row="1" column="1">
              <layout class="QHBoxLayout" name="horizontalLayout_14">
@@ -826,8 +688,18 @@ border-radius: 0%;</string>
                 </property>
                </widget>
               </item>
+             </layout>
+            </item>
+            <item row="2" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <property name="spacing">
+               <number>1</number>
+              </property>
               <item>
                <widget class="QPushButton" name="findbranch">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">border: none;
 font: 8pt &quot;Trebuchet MS&quot;;
@@ -843,29 +715,39 @@ padding: 7;
                 </property>
                </widget>
               </item>
+              <item>
+               <widget class="QPushButton" name="info">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border: none;
+background:none;
+border-radius: 30%;
+font: 800 12pt &quot;Trebuchet MS&quot;;
+padding-top: 5;
+padding-bottom: 5;
+padding-left: 15;
+padding-right: 15;
+color: rgb(100, 105, 112);
+
+text-align: left;</string>
+                </property>
+                <property name="text">
+                 <string>?</string>
+                </property>
+               </widget>
+              </item>
              </layout>
             </item>
-            <item row="3" column="0">
+            <item row="4" column="0">
              <widget class="QLabel" name="enterManuallyLabel_5">
               <property name="text">
                <string/>
               </property>
              </widget>
             </item>
-            <item row="2" column="1">
-             <widget class="QLabel" name="label">
-              <property name="styleSheet">
-               <string notr="true">color:rgb(150, 150, 150);</string>
-              </property>
-              <property name="text">
-               <string>Enter manually or select &quot;Find Open Branch&quot; to find an open spot for your donor's leaf</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="1">
+            <item row="4" column="1">
              <widget class="QLabel" name="validate">
               <property name="styleSheet">
                <string notr="true">color:rgb(247, 65, 58)</string>
@@ -910,6 +792,9 @@ padding: 7;
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="styleSheet">
            <string notr="true">border: none;
 background: rgb(85, 198, 229);
@@ -952,13 +837,77 @@ letter-spacing: .2rem
      </layout>
     </widget>
    </widget>
+   <widget class="QPushButton" name="close">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>20</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background:none;
+color: white</string>
+    </property>
+    <property name="text">
+     <string>✖</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="banner">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>20</y>
+      <width>611</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: rgba(159, 209, 155, 200); 
+font: 75 8pt &quot;Trebuchet MS&quot;;
+color: white;
+padding-left: 15;
+padding-top:5;
+padding-bottom:5;
+border-radius: 10%;</string>
+    </property>
+    <property name="text">
+     <string>Donor removed successfully.</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="close_2">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>20</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background:none;
+color: white</string>
+    </property>
+    <property name="text">
+     <string>✖</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>771</width>
+     <width>770</width>
      <height>21</height>
     </rect>
    </property>
